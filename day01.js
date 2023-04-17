@@ -1,22 +1,50 @@
 
+console.log("LEETCODE")
 //1. Two Sum
 
-var twoSum = (nums, target)=> {
-    
+/*
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
     var list={};
-  
+ 
 for(let i=0;i<nums.length;i++){
-    if(list[target-nums[i]]>0){
-        return([list[target-nums[i]],i]);
-    }
-    else{
-        list[nums[i]]=i;
-    }
+   if(list[target-nums[i]]>=0){
+       return([list[target-nums[i]],i]);
+   }
+   else{
+       list[nums[i]]=i;
+   }
 }
-  //  return(ok);
+};
+//////////////////////////////////////////////////////////////////
+//9. palindrome
+
+/*
+ * @param {number} x
+ * @return {boolean}
+ */
+var isPalindrome = function(x) {
+    const see= x.toString().split("").reverse().join("") === x.toString() ? true: false;
+    return see;
 };
 
-let num=[1,2,4,1,5,6,5];
-let target=10;
+/////////////////////////////////////////////
+//136. Single Number
 
-console.log(twoSum(num,target));
+/*
+ * @param {number[]} numbs
+ * @return {number}
+ */
+var singleNumber = function(numbs) {
+    list={}
+    numbs.map((ele)=>list[ele]=(list[ele] || 0)+1);
+    for(key in list){
+        if(list[key]==1){
+            return Number(key)
+        }
+    }
+    console.log();
+};
