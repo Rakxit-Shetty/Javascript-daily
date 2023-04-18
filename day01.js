@@ -48,3 +48,4 @@ var singleNumber = function(numbs) {
     }
     console.log();
 };
+//////////////////////////
