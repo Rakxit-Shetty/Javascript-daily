@@ -18,3 +18,62 @@ var longestCommonPrefix = function(strs) {
     }
 return s1.substring(0,ind);
 };
+
+////////////////////////////////////////////
+//20. Valid Parentheses
+/*
+ * @param {string} s
+ * @return {boolean}
+ */
+var isValid = function(s) {
+    
+    let pairs={"(":")","[":"]","{":"}"}
+      let a=[];
+      let b=[];
+      
+      const s1=s.split("");
+      for(let i=0;i<=s1.length;i++){
+      a.push(s1.shift());
+      b.push(s1.shift());
+      //const a1 =a.join("").charCodeAt(i)
+      //a[i]==pairs[a[i]];
+      if(a.length!=b.length){
+          return false;
+      }
+    //console.log(pairs[a[i]],b[i]);
+    if(pairs[a[i]]!==b[i]){
+        return false;
+    }
+    else{
+       return true
+    }
+  //console.log(b[i]);
+    
+        
+      
+      }  
+  };
+
+  //gpt solution
+  function isValid(s) {
+  const stack = [];
+  const openingBrackets = ["(", "[", "{"];
+  const closingBrackets = [")", "]", "}"];
+
+  for (let i = 0; i < s.length; i++) {
+    const bracket = s[i];
+
+    if (openingBrackets.includes(bracket)) {
+      stack.push(bracket);
+    } else if (closingBrackets.includes(bracket)) {
+      const lastOpening = stack.pop();
+      if (
+        openingBrackets.indexOf(lastOpening) !== closingBrackets.indexOf(bracket)
+      ) {
+        return false;
+      }
+    }
+  }
+
+  return stack.length === 0;
+};
