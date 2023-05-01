@@ -32,3 +32,43 @@ var kidsWithCandies = function(candies, extraCandies) {
          });
          return res;      
 };
+////////////////////////////////
+//1365. How Many Numbers Are Smaller Than the Current Number
+/*
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var smallerNumbersThanCurrent = function(nums) {
+     
+    let res=[];
+   
+     
+  nums.map((ele,i)=>{
+      let count=0;
+     for(let j=0;j<nums.length;j++){
+         if(nums[j]!=ele && nums[j]<ele)
+             count++;
+     }
+      
+     res.push(count)
+      
+  });
+
+    return res;
+ 
+
+};
+
+//////////////////
+//338. Counting Bits
+/*
+ * @param {number} n
+ * @return {number[]}
+ */
+var countBits = function(n) {
+    let res=[];
+   for(let i=0;i<=n;i++){
+    res.push((i).toString(2).split("").filter((ele)=>ele!=0).length);
+}
+return (res); 
+};
