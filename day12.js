@@ -59,3 +59,62 @@ var moveZeroes = function(nums) {
     }
    return nums;
 };
+/////////////////////////////////////////
+//349. Intersection of Two Arrays
+/**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number[]}
+ */
+var intersection = function(nums1, nums2) {
+    let big=[];
+  let small=[];
+  if(nums1.length>nums2.length){
+      big=nums1;
+      small=nums2;
+  }else{
+      big=nums2;
+      small=nums1;
+  }
+    return [...new Set(big.filter((ele1)=> small.some((ele2)=>ele1==ele2)))];
+};
+
+//////////////////////////////////////////////////
+//1491. Average Salary Excluding the Minimum and Maximum Salary
+/*
+ * @param {number[]} salary
+ * @return {number}
+ */
+var average = function(salary) {
+    let fin = salary.filter((ele)=>{
+       if(Math.max(...salary)!==ele && Math.min(...salary)!==ele ){
+       return ele
+       }
+     
+   });
+    return fin.reduce((acu,cur)=>acu+cur,0)/fin.length;
+};
+
+///////////////////////////////////////////////
+//28. Find the Index of the First Occurrence in a String
+/*
+ * @param {string} haystack
+ * @param {string} needle
+ * @return {number}
+ */
+var strStr = function(haystack, needle) {
+    if(haystack.length<needle.length){
+        return -1;
+    }
+    let len=needle.length
+    for(let i=0;i<=haystack.length-needle.length;i++){
+        //console.log(haystack.substring(i,len))
+        if(haystack.substring(i,len)===needle){
+            return i;
+        }
+        len++;
+        if( haystack.length-needle.length===i  ){
+       return -1;
+   }
+    }  
+};
