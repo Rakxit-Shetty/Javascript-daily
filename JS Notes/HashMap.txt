@@ -1,0 +1,11 @@
+Hash Map Notes
+
+const map1 = new Map();
+
+map1.set('a', 1); //set
+map1.get('a'); output 1
+
+console.log(map1.size);
+// Expected output: 3
+
+map1.delete('a');
