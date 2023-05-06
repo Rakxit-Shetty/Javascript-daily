@@ -156,3 +156,16 @@ var createCounter = function(n) {
  * counter() // 11
  * counter() // 12
  */
+
+
+/////////////////////////////////
+//1281. Subtract the Product and Sum of Digits of an Integer
+/*
+ * @param {number} n
+ * @return {number}
+ */
+var subtractProductAndSum = function(n) {
+    let prod=n.toString().split("").reduce((acu,cur)=>Number(acu)*Number(cur),1);
+let sum=n.toString().split("").reduce((acu,cur)=>Number(acu)+Number(cur),Number(0));
+return prod-sum;
+};
