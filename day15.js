@@ -169,3 +169,23 @@ var subtractProductAndSum = function(n) {
 let sum=n.toString().split("").reduce((acu,cur)=>Number(acu)+Number(cur),Number(0));
 return prod-sum;
 };
+
+
+/////////////////
+//1844. Replace All Digits with Characters
+/*
+ * @param {string} s
+ * @return {string}
+ */
+var replaceDigits = function(s) {
+       
+    let str=s.split("");
+    
+    for(let i=0;i<str.length;i++){
+        if(i%2!=0){
+            str[i]=String.fromCharCode(Number(str[i-1].charCodeAt())+Number(str[i]));
+        }
+    }
+      
+      return str.join("");
+  };
