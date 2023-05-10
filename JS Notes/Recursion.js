@@ -1,4 +1,5 @@
 // program to count down numbers to 1
+
 function countDown(number) {
 
     // display the number
