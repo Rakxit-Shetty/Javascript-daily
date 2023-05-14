@@ -9,3 +9,4 @@ console.log(map1.size);
 // Expected output: 3
 
 map1.delete('a');
+//
