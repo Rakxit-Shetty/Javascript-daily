@@ -14,7 +14,7 @@ var maximumWealth = function(accounts) {
 /**
  * @param {string} s
  * @return {string}
- */
+ */ 
 var removeOuterParentheses = function(s) {
     let count=0,outer="";
     let res= [...s].filter((ele)=>{
