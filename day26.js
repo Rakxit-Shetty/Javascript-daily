@@ -1,4 +1,5 @@
 //1672. Richest Customer Wealth
+
 /**
  * @param {number[][]} accounts
  * @return {number}
@@ -11,6 +12,7 @@ var maximumWealth = function(accounts) {
 };
 
 //1021. Remove Outermost Parentheses
+
 /**
  * @param {string} s
  * @return {string}
