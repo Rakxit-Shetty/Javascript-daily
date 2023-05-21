@@ -126,6 +126,31 @@ let objClone2={ ...objmine };
 let objClone3=JSON.parse(JSON.stringify(objmine))
 
 
+/////////////Problem  Club same id and sum its needed val
+
+let a11=[{
+  id:2,
+  sal:20,
+  name:"Sam"
+},{
+  id:2,
+  sal:100,
+  name:"Sam"
+},{
+  id:3,
+  name:"Ram",
+  sal:200,
+}];
+
+let res=a11.reduce((acc, obj) => {
+  if (acc[obj.id]) {
+    acc[obj.id].sal += obj.sal;
+  } else {
+    acc[obj.id] = { ...obj };
+  }
+  return acc;
+}, {})
+console.log("see",Object.values(res))
 
 
 
