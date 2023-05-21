@@ -153,7 +153,7 @@ let res=a11.reduce((acc, obj) => {
 console.log("see",Object.values(res))
 ///
 // MAP REDUCE help
-//get count 2
+//get the count 2
 let ac = [[1, 1, 1], [1, 1, 1, 2], [2, 1, 1, 2], [1, 1, 2], [2, 2, 2], [2]];
 
 let countTwo = ac.map(subarray => {
