@@ -126,7 +126,7 @@ let objClone2={ ...objmine };
 let objClone3=JSON.parse(JSON.stringify(objmine))
 
 
-/////////////Problem  Club same id and sum its needed val
+/////////////Problem Club same id and sum its needed val
 
 let a11=[{
   id:2,
@@ -151,6 +151,29 @@ let res=a11.reduce((acc, obj) => {
   return acc;
 }, {})
 console.log("see",Object.values(res))
+///
+// REDUCE help
+//get count 2
+let ac = [[1, 1, 1], [1, 1, 1, 2], [2, 1, 1, 2], [1, 1, 2], [2, 2, 2], [2]];
 
+let countTwo = ac.map(subarray => {
+  return subarray.reduce((count, num) => {
+    return count + (num === 2 ? 1 : 0);
+  }, 0);
+});
 
+console.log(countTwo);//[0, 1, 2, 1, 3, 1]
 
+//get sub array 2
+let a2 = [[1, 1, 1], [1, 1, 1, 2], [2, 1, 1, 2], [1, 1, 2], [2, 2, 2], [2]];
+
+let countTwo2 = a2.map(subarray => {
+  return subarray.reduce((result, num) => {
+    if (num === 2) {
+      result.push(num);
+    }
+    return result;
+  }, []);
+});
+
+console.log(countTwo2);//[[], [2], [2, 2], [2], [2, 2, 2], [2]]
