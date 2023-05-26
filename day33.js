@@ -52,3 +52,13 @@ var chunk = function(arr, size) {
    var flat = function (arr, n) {
     return arr.flat(n)   
    };
+
+   //2678. Number of Senior Citizens
+
+   /**
+ * @param {string[]} details
+ * @return {number}
+ */
+var countSeniors = function(details) {
+    return details.filter((ele)=>Number(ele[11]+ele[12])>60).length
+ };
