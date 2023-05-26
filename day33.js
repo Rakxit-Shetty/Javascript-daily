@@ -12,3 +12,32 @@ var isPalindrome = function(s) {
        }
        return true;
    };
+
+   //2677. Chunk Array
+
+   /**
+ * @param {Array} arr
+ * @param {number} size
+ * @return {Array[]}
+ */
+var chunk = function(arr, size) {
+    let res=[],array=[];
+    count=0;
+    
+    arr.forEach((ele)=>{
+        array.push(ele);
+     count++;
+      
+      if(count===size){
+      res.push(array);
+      array=[];
+      count=0;
+      }
+    
+    }
+    );
+    
+    if(array.length!=0)
+    res.push(array)
+    return res
+    };
