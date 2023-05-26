@@ -41,3 +41,14 @@ var chunk = function(arr, size) {
     res.push(array)
     return res
     };
+
+//2625. Flatten Deeply Nested Array
+
+    /*
+ * @param {any[]} arr
+    * @param {number} depth
+    * @return {any[]}
+    */
+   var flat = function (arr, n) {
+    return arr.flat(n)   
+   };
