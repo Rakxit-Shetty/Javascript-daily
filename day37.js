@@ -56,3 +56,20 @@ var findDisappearedNumbers = function(nums) {
      
      return res;
  };
+
+ //442. Find All Duplicates in an Array
+
+ /**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var findDuplicates = function(nums) {
+    let list={},res=[];
+    nums.forEach((ele)=>list[ele]=(list[ele]||0)+1)
+    for(key in list){
+        if(list[key]>1){
+res.push(Number(key))
+        }
+    }
+    return res;
+};
