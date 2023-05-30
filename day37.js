@@ -13,3 +13,30 @@ var findDuplicate = function(nums) {
         }
     }
 };
+
+//41. First Missing Positive
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var firstMissingPositive = function(nums) {
+    
+   
+    let list={}
+    nums.forEach((ele)=>list[ele]=(list[ele]||0)+1);
+    let idx=1;
+    
+    for(key in list){
+        if(Number(key)>0){
+       
+        if(Number(key)==idx){
+            idx++
+        }else{
+            return Number(idx)
+        }     
+        }
+    }
+    
+    return idx;
+};
