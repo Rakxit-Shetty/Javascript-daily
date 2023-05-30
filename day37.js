@@ -73,3 +73,12 @@ res.push(Number(key))
     }
     return res;
 };
+
+//151. Reverse Words in a String
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var reverseWords = function(s) {
+    return s.split(" ").reverse().filter((ele)=>ele!="").join(" ")
+ };
