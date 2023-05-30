@@ -40,3 +40,19 @@ var firstMissingPositive = function(nums) {
     
     return idx;
 };
+
+//448. Find All Numbers Disappeared in an Array
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var findDisappearedNumbers = function(nums) {
+    let list={}, res=[];
+     nums.forEach((ele)=>list[ele]=(list[ele]||0)+1)
+      for(let i=1; i<=nums.length;i++){
+     list[i.toString()] ||res.push(i)
+         
+     }
+     
+     return res;
+ };
