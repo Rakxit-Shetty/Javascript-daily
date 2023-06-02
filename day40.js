@@ -21,3 +21,25 @@ var removeDuplicates = function(nums) {
    //nums.push([...new Set(nums)])
 return k;
 };
+
+//27. Remove Element
+
+/**
+ * @param {number[]} nums
+ * @param {number} val
+ * @return {number}
+ */
+var removeElement = function(nums, val) {
+    let x=nums.length;
+    while(nums.includes(val)){
+     //   i++;
+ nums.splice(nums.findIndex((ele)=>ele===val),1)
+   }
+   let k=nums.length
+   for(let i=0;i<x;i++){
+       if(k<i){
+           nums.push("-")
+       }
+   }
+   return k
+ };
