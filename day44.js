@@ -21,3 +21,18 @@ s.split("").forEach(ele=>ele=="*" ? res.pop():res.push(ele))
 return res.join("")
 
 };
+
+//844. Backspace String Compare
+
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var backspaceCompare = function(s, t) {
+    let resS=[], resT=[];
+    s.split("").forEach(ele=>ele=="#" ? resS.pop(): resS.push(ele));
+    t.split("").forEach(ele=>ele=="#" ? resT.pop(): resT.push(ele));
+    if( resS.join("")===resT.join("")) return true;
+    return false;
+};
