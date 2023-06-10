@@ -13,3 +13,20 @@ var repeatedCharacter = function(s) {
         
     }
 };
+
+//1748. Sum of Unique Elements
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var sumOfUnique = function(nums) {
+    let list={}
+    nums.forEach((ele)=>list[ele]=(list[ele]||0)+1);
+    let sum=0;
+    for (key in list){
+        if(list[key]==1)
+        sum+=Number(key)
+    }
+    return sum;
+};
