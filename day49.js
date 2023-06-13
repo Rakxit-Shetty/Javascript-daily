@@ -59,3 +59,23 @@ var firstUniqChar = function(s) {
     
     return s.split("").indexOf(ele);
 };
+
+//1880. Check if Word Equals Summation of Two Words
+
+/**
+ * @param {string} firstWord
+ * @param {string} secondWord
+ * @param {string} targetWord
+ * @return {boolean}
+ */
+var isSumEqual = function(firstWord, secondWord, targetWord) {
+    var ret=(s)=>{
+let res=[];
+  s.split("").forEach((ele)=>res.push(ele.charCodeAt()-97));
+  //  console.log(res)
+  return res.reduce((acc,cur)=>acc+cur,"");
+  }
+  //console.log(Number(ret(firstWord))+Number(ret(secondWord)),ret(targetWord))
+ return (Number(ret(firstWord))+Number(ret(secondWord))==ret(targetWord))
+
+};
