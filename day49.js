@@ -36,4 +36,26 @@ var frequencySort = function(s) {
     
     const sortedArr = Object.keys(charMap).sort((a, b) => charMap[b] - charMap[a]);
     
-    return sortedArr.reduce((acc, cur) => acc + cur.repeat(charMap[cur]) ,'')
+    return sortedArr.reduce((acc, cur) => acc + cur.repeat(charMap[cur]) ,'');
+
+
+    //387. First Unique Character in a String
+    /**
+ * @param {string} s
+ * @return {number}
+ */
+var firstUniqChar = function(s) {
+    let hMap=new Map();
+    s.split("").forEach((ele)=>hMap.set(ele,(hMap.get(ele)||0)+1));
+    let ele;
+    for(const key of hMap){
+       
+        if (key[1]==1) {
+            ele=key[0];
+             break;
+             }
+    }
+
+    
+    return s.split("").indexOf(ele);
+};
