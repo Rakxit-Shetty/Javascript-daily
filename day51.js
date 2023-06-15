@@ -20,3 +20,21 @@ var digitCount = function(num) {
 
     return true;
 };
+
+//728. Self Dividing Numbers
+
+/**
+ * @param {number} left
+ * @param {number} right
+ * @return {number[]}
+ */
+var selfDividingNumbers = function(left, right) {
+    let res=[]
+   for(let i=left;i<=right;i++){
+       flg=true;
+       i.toString().split("").forEach((ele)=>{
+           if(i%Number(ele)!=0) flg=false })
+           if(flg==true) res.push(i)
+   }
+   return res 
+};
