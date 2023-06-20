@@ -13,6 +13,5 @@ var largestAltitude = function(gain) {
       res.push(fin)
       return Math.max(...res);
    
-   
    };
 
