@@ -55,11 +55,14 @@ function listTenDaysAfterThisDate(startDate) {
   
   // Display the result
   tenDaysList.forEach((date,i) => {
+    let [day,time]=date.split("T");
+    // exec(`rm day${i}.js`, (error, stdout, stderr) => {});
+    // git commit --amend --date="2023-05-10 15:15:00"
+    // console.log(`git commit --amend --date=${day} ${time.slice(0, -1)}`);
 
-    // console.log(date);
     exec(`touch day${i}.js`, (error, stdout, stderr) => {});
      exec(`git add .`, (error, stdout, stderr) => {});
      exec(`git commit -m no${i}`, (error, stdout, stderr) => {});
-     exec(`git commit --amend --date=${date}`, (error, stdout, stderr) => {});
+     exec(`git commit --amend --date=${day} ${time.slice(0, -1)}`, (error, stdout, stderr) => {});
     
   });
